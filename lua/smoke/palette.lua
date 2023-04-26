@@ -1,59 +1,61 @@
 local options = require('smoke.config').options
 
--- black     #0C0C0C
--- lowest    #1A1A1A
--- lower     #262626
--- low       #303030
--- gray      #7E7E7E
--- high      #A5A5A5
--- higher    #CCCCCC
--- highest   #F2F2F2
--- white     #FFFFFF
+local colors = {
+  black      = '#0C0C0C',
+  darkgray4  = '#1A1A1A',
+  darkgray3  = '#262626',
+  darkgray2  = '#353535',
+  darkgray1  = '#525252',
+  gray       = '#7E7E7E',
+  lightgray1 = '#A5A5A5',
+  lightgray2 = '#B4B4B4',
+  lightgray3 = '#CDCDCD',
+  lightgray4 = '#F2F2F2',
+  white      = '#FFFFFF',
+}
 
 local variants = {
   dark = {
-    nc = '#16141f',
-    base = '#0C0C0C',
-    text = '#CCCCCC',
-    surface = '#1A1A1A',
-    overlay = '#262626',
-    black = '#0C0C0C',
-    lowest = '#1A1A1A',
-    lower = '#494949',
-    low = '#646464',
-    gray = '#7E7E7E',
-    high = '#A5A5A5',
-    higher = '#CCCCCC',
-    highest = '#F2F2F2',
-    white = '#FFFFFF',
-    red = '#E93E33',
-    green = '#a7c080',
-    orange = '#F3A432',
-    pink = '#ebbcba',
-    none = 'NONE',
+    nc      = colors.darkgray4,
+    base    = colors.black,
+    text    = colors.lightgray3,
+    surface = colors.darkgray4,
+    overlay = colors.darkgray3,
+    low4    = colors.darkgray4,
+    low3    = colors.darkgray3,
+    low2    = colors.darkgray2,
+    low1    = colors.darkgray1,
+    medium  = colors.gray,
+    high1   = colors.lightgray1,
+    high2   = colors.lightgray2,
+    high3   = colors.lightgray3,
+    high4   = colors.lightgray4,
+    red     = '#E93E33',
+    green   = '#A7C080',
+    orange  = '#F3A432',
+    pink    = '#EBBCBA',
+    none    = 'NONE',
   },
   light = {
-    nc = '#f8f0e7',
-    base = '#faf4ed',
-    surface = '#fffaf3',
-    overlay = '#f2e9e1',
-    muted = '#9893a5',
-    subtle = '#797593',
-    text = '#575279',
-    love = '#b4637a',
-    gold = '#ea9d34',
-    rose = '#d7827e',
-    pine = '#286983',
-    foam = '#56949f',
-    iris = '#907aa9',
-    highlight_low = '#f4ede8',
-    highlight_med = '#dfdad9',
-    highlight_high = '#cecacd',
-    none = 'NONE',
+    nc      = colors.lightgray4,
+    base    = colors.white,
+    text    = colors.darkgray3,
+    surface = colors.lightgray4,
+    overlay = colors.lightgray3,
+    low4    = colors.lightgray4,
+    low2    = colors.lightgray2,
+    low1    = colors.lightgray1,
+    medium  = colors.gray,
+    high1   = colors.darkgray1,
+    high3   = colors.darkgray3,
+    high4   = colors.darkgray4,
+    red     = '#E93E33',
+    green   = '#A7C080',
+    orange  = '#F3A432',
+    pink    = '#EBBCBA',
+    none    = 'NONE',
   },
 }
 
-return variants.dark
---
--- return vim.o.background == 'light' and variants.light
---     or variants.dark
+return vim.o.background == 'light' and variants.light
+    or variants.dark
