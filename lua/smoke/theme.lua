@@ -111,7 +111,7 @@ function M._load(options)
   h('PreCondit', { fg = p.medium })
   h('PreProc', { fg = p.medium })
   h('Repeat', { fg = p.high1 })
-  h('Special', { fg = p.high3 })
+  h('Special', { fg = p.pink })
   h('SpecialChar', { fg = p.high3 })
   h('SpecialComment', { fg = p.medium })
   h('Statement', { fg = p.high1 })
@@ -215,7 +215,7 @@ function M._load(options)
   h('@constant', { link = 'Constant' })
   h('@constant.builtin', { fg = p.high3 })
   h('@constant.macro', { link = '@constant' })
-  h('@constructor', { fg = p.medium })
+  h('@constructor', { fg = p.high1 })
   h('@field', { fg = p.high1 })
   h('@function', { link = 'Function' })
   h('@function.builtin', { link = 'Function' })
@@ -226,7 +226,7 @@ function M._load(options)
   h('@keyword.operator', { fg = p.low1 })
   h('@label', { link = 'Label' })
   h('@macro', { link = 'Macro' })
-  h('@method', { fg = p.medium })
+  h('@method', { fg = p.high1 })
   h('@number', { link = 'Number' })
   h('@operator', { link = 'Operator' })
   h('@parameter', { fg = p.medium, italic = maybe.italic })
@@ -254,6 +254,7 @@ function M._load(options)
   h('@text.math', { link = 'Special' })
   h('@text.environment', { link = 'Macro' })
   h('@text.environment.name', { link = 'Type' })
+  h('@text.reference.vimdoc', { link = 'Special' })
   h('@text.title', { link = 'Title' })
   h('@text.uri', { fg = groups.link })
   h('@text.note', { link = 'SpecialComment' })
@@ -274,7 +275,7 @@ function M._load(options)
   h('@lsp.type.parameter', { link = '@parameter' })
   h('@lsp.type.property', { link = '@property' })
   h('@lsp.type.variable', {})       -- use treesitter styles for regular variables
-  h('@lsp.typemod.function.defaultLibrary', { link = 'Special' })
+  h('@lsp.typemod.function.defaultLibrary', { link = 'Function' })
   h('@lsp.typemod.variable.defaultLibrary', { link = '@variable.builtin' })
 
   -- LSP Injected Groups
@@ -365,15 +366,15 @@ function M._load(options)
   h('IndentBlanklineSpaceCharBlankline', { fg = p.low2, nocombine = true })
 
   -- hrsh7th/nvim-cmp
-  h('CmpItemAbbr', { fg = p.low1 })
-  h('CmpItemAbbrDeprecated', { fg = p.low1, strikethrough = true })
+  h('CmpItemAbbr', { fg = p.medium })
+  h('CmpItemAbbrDeprecated', { fg = p.medium, strikethrough = true })
   h('CmpItemAbbrMatch', { fg = p.text, bold = true })
   h('CmpItemAbbrMatchFuzzy', { fg = p.text, bold = true })
-  h('CmpItemKind', { fg = p.low1 })
+  h('CmpItemKind', { fg = p.medium })
   h('CmpItemKindClass', { fg = p.high1 })
   h('CmpItemKindFunction', { fg = p.high4 })
   h('CmpItemKindInterface', { fg = p.high1 })
-  h('CmpItemKindMethod', { fg = p.medium })
+  h('CmpItemKindMethod', { fg = p.high1 })
   h('CmpItemKindSnippet', { fg = p.high4 })
   h('CmpItemKindVariable', { fg = p.text })
 
@@ -455,8 +456,8 @@ function M._load(options)
 
   -- ggandor/leap.nvim
   h('LeapMatch', { link = 'MatchParen' })
-  h('LeapLabelPrimary', { link = 'IncSearch' })
-  h('LeapLabelSecondary', { fg = p.base, bg = p.high1 })
+  h('LeapLabelPrimary', { link = 'Special' })
+  h('LeapLabelSecondary', { link = 'IncSearch' })
 
   -- nvim-telescope/telescope.nvim
   h('TelescopeBorder', { fg = groups.border, bg = float_background })
@@ -518,7 +519,7 @@ function M._load(options)
   h('NavicIconsNamespace', { fg = p.base })
   h('NavicIconsPackage', { fg = p.base })
   h('NavicIconsClass', { fg = p.high1 })
-  h('NavicIconsMethod', { fg = p.medium })
+  h('NavicIconsMethod', { fg = p.high1 })
   h('NavicIconsProperty', { fg = p.high1 })
   h('NavicIconsField', { fg = p.high1 })
   h('NavicIconsConstructor', { fg = p.high4 })
@@ -562,8 +563,8 @@ function M._load(options)
   vim.g.terminal_color_9 = p.red          -- bright red
   vim.g.terminal_color_2 = p.green          -- green
   vim.g.terminal_color_10 = p.green         -- bright green
-  vim.g.terminal_color_3 = p.high4          -- yellow
-  vim.g.terminal_color_11 = p.high4         -- bright yellow
+  vim.g.terminal_color_3 = p.orange          -- yellow
+  vim.g.terminal_color_11 = p.orange         -- bright yellow
   vim.g.terminal_color_4 = p.high1          -- blue
   vim.g.terminal_color_12 = p.high1         -- bright blue
   vim.g.terminal_color_5 = p.medium          -- magenta
