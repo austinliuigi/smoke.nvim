@@ -470,7 +470,7 @@ function M._load(options)
   h('TelescopeTitle', { fg = p.low1 })
 
   -- rcarriga/nvim-notify
-  h('NotifyINFOBorder', { fg = p.high1 })
+  h('NotifyINFOBorder', { fg = p.green })
   h('NotifyINFOTitle', { link = 'NotifyINFOBorder' })
   h('NotifyINFOIcon', { link = 'NotifyINFOBorder' })
   h('NotifyWARNBorder', { fg = p.orange })
